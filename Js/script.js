@@ -24,4 +24,59 @@
       renderIcon();
     });
   }
+
+
+
+
+const carousel = document.querySelector('.carousel');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+
+if (carousel && prevBtn && nextBtn) {
+  const scrollAmount = 300;
+  let isAnimating = false;
+  let autoScrollInterval;
+
+  function nextSlide() {
+    if (isAnimating) return;
+    
+    isAnimating = true;
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    
+    setTimeout(() => {
+      isAnimating = false;
+      
+      // Se chegou no final, volta pro início suavemente
+      if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 50) {
+        setTimeout(() => {
+          carousel.scrollTo({ left: 0, behavior: 'instant' });
+        }, 300);
+      }
+    }, 600);
+  }
+
+  function prevSlide() {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  }
+
+  // Auto-scroll infinito SEMPRE para frente
+  autoScrollInterval = setInterval(() => {
+    nextSlide();
+  }, 10000);
+
+  // Botões
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+}
+
+
+
+
+
+
+
+
+
+
+
 })();
