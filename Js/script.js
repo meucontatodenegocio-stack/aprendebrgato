@@ -15,7 +15,8 @@
     toggle.setAttribute('aria-label', current === 'dark' ? 'Mudar para tema claro' : 'Mudar para tema escuro');
   }
 
-  renderIcon();
+
+renderIcon();
 
   if (toggle) {
     toggle.addEventListener('click', function () {
@@ -24,7 +25,6 @@
       renderIcon();
     });
   }
-
 
 
 
@@ -70,6 +70,44 @@ if (carousel && prevBtn && nextBtn) {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const playBtns = document.querySelectorAll('.play-btn');
+  
+  playBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const audioId = btn.dataset.audio;
+      playAudio(audioId, btn);
+    });
+  });
+});
+
+function playAudio(audioId, btn) {
+  // Para outros áudios
+  document.querySelectorAll('audio').forEach(audio => {
+    if (audio.id !== `audio-${audioId}`) {
+      audio.pause();
+    }
+  });
+  
+  const audio = document.getElementById(`audio-${audioId}`);
+  
+  if (audio.paused) {
+    // Inicia reprodução
+    btn.textContent = '⏸️ Pausar';
+    btn.classList.add('playing');
+    audio.play();
+  } else {
+    // Pausa
+    btn.textContent = '▶️ Continuar';
+    btn.classList.remove('playing');
+    audio.pause();
+  }
+  
+  audio.onended = () => {
+    btn.textContent = '🎤 Ouvir Novamente';
+    btn.classList.remove('playing');
+  };
+}
 
 
 
@@ -77,6 +115,5 @@ if (carousel && prevBtn && nextBtn) {
 
 
 
-
-
-})();
+}
+)();
