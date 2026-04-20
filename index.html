@@ -59,46 +59,98 @@
           </div>
         </div>
 
+        
+        
+        
+        
+        
         <div class="stories">
-          <article class="story-card">
-            <div class="story-number">1</div>
-            <h3>Começa a missão</h3>
-            <p>Hoje, temos uma missão especial! Um pequeno stereg está se escondendo por aí. Ele é curioso, esperto e adora brincar.</p>
-          </article>
+    <h3>História a ser contada</h3>
+    
+    <article class="story-card intro active">
+      <h3>Introdução</h3>
+      <p>Hoje, temos uma missão especial! Um pequeno animalzinho está se escondendo por aí. Ele é curioso, esperto e adora brincar.</p>
+      <p>Quem será esse animalzinho?</p>
+     
+    </article>
+    
+    <article class="story-card" data-page="1">
+      <div class="story-number">1</div>
+      <h3>Página 1</h3>
+      <p>Nosso animalzinho gosta de caminhar leve, bem de mansinho, sem fazer barulho nenhum. Ele fica parado, observando qualquer coisinha que se mexe.</p>
+      <p>Qual será esse animalzinho?</p>
+      <button class="play-btn" data-audio="1">🎤 Ouvir Narração</button>
+    </article>
 
-          <article class="story-card">
-            <div class="story-number">2</div>
-            <h3>Passos bem leves</h3>
-            <p>Nosso stereg gosta de caminhar leve, bem de mansinho, sem fazer barulho nenhum. Ele fica parado, observando qualquer coisinha que se mexe.</p>
-          </article>
+    <article class="story-card" data-page="2">
+      <div class="story-number">2</div>
+      <h3>Página 2</h3>
+      <p>Às vezes, de tarde, esse animalzinho deita-se ao sol e faz um barulhinho macio, como se dissesse "purrr...".</p>
+      <button class="play-btn" data-audio="2">🎤 Ouvir Narração</button>
+    </article>
 
-          <article class="story-card">
-            <div class="story-number">3</div>
-            <h3>Descanso ao sol</h3>
-            <p>Às vezes, de tarde, esse stereg deita-se ao sol e faz um barulhinho macio, como se dissesse “purrr...”.</p>
-          </article>
+    <article class="story-card" data-page="3">
+      <div class="story-number">3</div>
+      <h3>Página 3</h3>
+      <p>Ah, agora está brincando! Enrola-se, corre, pula! Que arteiro!</p>
+      <button class="play-btn" data-audio="3">🎤 Ouvir Narração</button>
+    </article>
 
-          <article class="story-card">
-            <div class="story-number">4</div>
-            <h3>Hora da brincadeira</h3>
-            <p>Ah, agora está brincando! Enrola-se, corre, pula e dá risada de si mesmo! Que arteiro!</p>
-          </article>
+    <article class="story-card" data-page="4">
+      <div class="story-number">4</div>
+      <h3>Página 4</h3>
+      <p>Nosso animalzinho finalmente dorme enroladinho, sonhando com suas aventuras noturnas...</p>
+      <p>Você sabe que animalzinho é esse?</p>
+      <button class="play-btn" data-audio="4">🎤 Ouvir Narração</button>
+    </article>
 
-          <article class="story-card">
-            <div class="story-number">5</div>
-            <h3>Soninho gostoso</h3>
-            <p>Nosso stereg finalmente dorme enroladinho, sonhando com suas aventuras noturnas...</p>
-          </article>
-
-          <article class="story-card">
-            <div class="story-number">6</div>
-            <h3>Revelação final</h3>
-            <p>E agora, juntando as letras... G - A - T - O -... qual é o stereg escondido?</p>
-          </article>
-        </div>
+    <article class="story-card final">
+      <h3>Revelação final</h3>
+      <p>Agora, montando o quebra-cabeça, vamos descobrir juntos que animal é esse!</p>
+      
+    </article>
+    
+    <!-- Áudios da sua voz -->
+    <audio id="audio-intro" src="intro.mp3"></audio>
+    <audio id="audio-1" src="music/pagina1.mp3"></audio>
+    <audio id="audio-2" src="music/pagina2.mp3"></audio>
+    <audio id="audio-3" src="music/pagina3.mp3"></audio>
+    <audio id="audio-4" src="music/pagina4.mp3"></audio>
+    <audio id="audio-final" src="final.mp3"></audio>
+  </div>
       </div>
     </section>
 
+    
+    
+    
+    <section class="video-section">
+  <a href="https://www.youtube.com/watch?v=jKPcwG0V9Sc" target="_blank" class="video-poster-link">
+    <div class="video-poster">
+      <img src="https://img.youtube.com/vi/jKPcwG0V9Sc/maxresdefault.jpg" alt="Thumbnail História Infantil">
+      
+      <!-- Botão Play VISÍVEL -->
+      <div class="play-overlay">
+        <div class="play-button">
+          <span class="play-triangle">▶</span>
+          <span class="play-glow"></span>
+        </div>
+        <p class="play-text">Assistir agora</p>
+      </div>
+    </div>
+  </a>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <section class="highlight">
       <div class="container">
         <div class="highlight-box">
@@ -153,7 +205,9 @@
     </div>
   </footer>
 
-<section class="products-section">
+  
+  
+  <section class="products-section">
   <div class="container">
     <div class="section-head">
       <h3>Produtos Relacionados</h3>
@@ -186,8 +240,12 @@
     </div>
   </div>
 </section>
-
-
+  
+  
+  
+  
+  
+  
   
   <script src="js/script.js" defer></script>
 </body>
